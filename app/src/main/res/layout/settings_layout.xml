@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/ipAddressLabel"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/ipAddress"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/ipAddress_string" >
+    </TextView>
+
+    <EditText
+            android:id="@+id/ipAddressEditField"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="17dp"
+            android:layout_toEndOf="@+id/ipAddressLabel"
+            android:hint="@string/enter_ipAddress_string"
+            android:textSize="15dp"
+            android:inputType="textShortMessage">
+            <requestFocus />
+    </EditText>
+
+    <!-- Time and Date -->
+    <TextView
+        android:id="@+id/dateLabel"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/ipAddressLabel"
+        android:layout_marginTop="25dp"
+        android:text="@string/date_string" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ipAddressEditField"
+        android:layout_toEndOf="@+id/dateLabel"
+        android:layout_marginTop="15dp"
+        android:text="@string/no_date_set_string" />
+
+    <Button
+        android:id="@+id/date_picker_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ipAddressEditField"
+        android:layout_toEndOf="@id/date"
+        android:text="@string/choose_date_string"
+        android:textSize="10dp"/>
+
+    <TextView
+        android:id="@+id/timeLabel"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/dateLabel"
+        android:layout_marginTop="30dp"
+        android:text="@string/time_string" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/date"
+        android:layout_toEndOf="@+id/timeLabel"
+        android:layout_marginTop="30dp"
+        android:text="@string/no_time_set_string" />
+
+    <Button
+        android:id="@+id/time_picker_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/date_picker_button"
+        android:layout_toEndOf="@+id/time"
+        android:text="@string/choose_time_string"
+        android:textSize="10dp"/>
+
+    <Button
+        android:id="@+id/doneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/doneButton_string" />
+
+
+</RelativeLayout>

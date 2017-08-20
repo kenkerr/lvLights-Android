@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">LvLightRemote</string>
+    <string name="settings_name">Configure</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">ON/OFF</string>
+    <string name="Manual">MANUAL</string>
+    <string name="onOffTime">ABSOLUTE ON/OFF</string>
+    <string name="duskDawn">DUSK_ON / DAWN OFF</string>
+    <string name="duskDelay">DUSK ON / DELAY OFF</string>
+    <string name="onTimeLabel">ON TIME</string>
+    <string name="offTimeLabel">OFF TIME</string>
+    <string name="toggleOnLabel">AUTO</string>
+    <string name="toggleOffLabel">MANUAL</string>
+    <string name="autoSettingsTitle">AUTO SETTINGS</string>
+    <string name="onOffTimesTitle">ON/OFF TIME</string>
+    <string name="quickActionTitle">QUICK ACTIONS</string>
+    <string name="ipAddress_string">IP Address</string>
+    <string name="enter_ipAddress_string">Enter IP Address</string>
+
+    <string name="turnOnTimeValue">%1$02d:%2$02d %3$s</string>
+    <string name="turnOffTimeValue">%1$02d:%2$02d %3$s</string>
+
+<!-- Strings for abstime_popup -->
+    <string name="turnOnTime_string">Turn On Time</string>
+    <string name="turnOffTime_string">Turn Off Time</string>
+
+<!-- Strings for settings_layout -->
+    <string name="date_string">Date</string>
+    <string name="time_string">Time</string>
+    <string name="no_date_set_string">0000&#8211;00&#8211;00</string>
+    <string name="no_time_set_string">00:00:00</string>
+    <string name="choose_date_string">Set Date</string>
+    <string name="choose_time_string">Set Time</string>
+
+    <string name="doneButton_string">Done</string>
+
+</resources>

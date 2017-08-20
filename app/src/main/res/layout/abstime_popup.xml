@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical" >
+
+<!-- ===========================================================================
+     Time on entry
+     ===========================================================================-->
+<TextView
+    android:id="@+id/absTimeOnText"
+    android:layout_width="wrap_content"
+    android:layout_marginTop="40dp"
+    android:layout_height="60dp"
+    android:keepScreenOn="true"
+    android:textColor="#33b5e5"
+    android:textStyle="bold"
+    android:textSize="25sp"
+    android:gravity="top|center_horizontal"
+    android:text="Time On: " />
+
+<TextView
+    android:id="@+id/absOnTime"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toEndOf="@+id/absTimeOffText"
+    android:layout_marginTop="40dp"
+    android:textSize="25sp"
+    android:textColor="#33b5e5"
+    android:textStyle="bold"
+    android:text="@string/no_time_set_string" />
+
+<Button
+    android:id="@+id/timeOn_picker_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="CHANGE"
+    android:layout_toEndOf="@id/absOnTime"
+    android:layout_marginTop="35dp"
+    android:layout_marginLeft="20dp"
+    android:onClick="showTimePickerDialog" />
+
+    <!-- ===========================================================================
+         Time off entry
+         ===========================================================================-->
+    <TextView
+    android:id="@+id/absTimeOffText"
+    android:layout_width="wrap_content"
+    android:layout_marginTop="40dp"
+    android:layout_height="60dp"
+    android:layout_below="@+id/absTimeOnText"
+    android:keepScreenOn="true"
+    android:textColor="#33b5e5"
+    android:textStyle="bold"
+    android:textSize="25sp"
+    android:gravity="top|center_horizontal"
+    android:text="Time Off:  " />
+
+<TextView
+    android:id="@+id/absOffTime"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/absTimeOnText"
+    android:layout_toEndOf="@+id/absTimeOffText"
+    android:layout_marginTop="40dp"
+    android:textSize="25sp"
+    android:textColor="#33b5e5"
+    android:textStyle="bold"
+    android:text="@string/no_time_set_string" />
+
+<Button
+    android:id="@+id/timeOff_picker_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="CHANGE"
+    android:layout_toEndOf="@id/absOffTime"
+    android:layout_below="@+id/absTimeOnText"
+    android:layout_marginTop="35dp"
+    android:layout_marginLeft="20dp"
+    android:onClick="showTimePickerDialog" />
+
+
+<Button
+    android:id="@+id/absDoneButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:text="@string/doneButton_string" />
+
+</RelativeLayout>

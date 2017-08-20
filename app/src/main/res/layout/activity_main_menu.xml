@@ -1,0 +1,202 @@
+<!--
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="#0099cc" tools:context=".MainMenu">
+    -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:orientation="vertical">
+
+<!-- ===========================================================================
+     First section is the current state indicator - hopefully a good graphic :-)
+     ===========================================================================-->
+    <TextView android:id="@+id/onOffStatus"
+        android:layout_width="match_parent"
+        android:layout_marginTop="40dp"
+        android:layout_height="80dp"
+        android:keepScreenOn="true"
+        android:textColor="#33b5e5"
+        android:textStyle="bold"
+        android:textSize="50sp"
+        android:gravity="top|center_horizontal"
+        android:text="@string/dummy_content" />
+
+    <!-- this is a divider line between sections -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+<!-- ===========================================================================
+     Second  section contains auto/manual selection
+     ===========================================================================-->
+    <TextView android:id="@+id/fullscreen_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_height="22dp"
+        android:keepScreenOn="true"
+        android:textColor="#33b5e5"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:gravity="left"
+        android:text="@string/autoSettingsTitle" />
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:id="@+id/onOffRadioGroup"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content"
+        android:checkedButton="@+id/radio_duskDawn"
+        android:orientation="vertical">
+        <RadioButton android:id="@+id/radio_manual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Manual"
+            android:onClick="onManualClicked"/>
+        <RadioButton android:id="@+id/radio_onOffTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/onOffTime"
+            android:onClick="onAbsOnOffClicked"/>
+        <RadioButton android:id="@+id/radio_duskDawn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/duskDawn"
+            android:onClick="onDuskDawnClicked"/>
+        <RadioButton android:id="@+id/radio_duskDelay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/duskDelay"
+            android:onClick="onDuskDelayClicked"/>
+    </RadioGroup>
+
+    <!-- this is a divider line between sections -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+<!-- ===========================================================================
+         Third section contains current ON and OFF times
+     ===========================================================================-->
+    <TextView android:id="@+id/fullscreen_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_height="22dp"
+        android:keepScreenOn="true"
+        android:textColor="#33b5e5"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:gravity="left"
+        android:text="@string/onOffTimesTitle" />
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/RelativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/onTimeLabel"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dp"
+            android:text="@string/onTimeLabel" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/onTime"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/onTimeLabel"
+            android:layout_marginTop="10dp"
+            android:text="@string/no_time_set_string" />
+
+
+        <TextView
+            android:id="@+id/offTimeLabel"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/onTimeLabel"
+            android:layout_marginTop="10dp"
+            android:text="@string/offTimeLabel" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/offTime"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/offTimeLabel"
+            android:layout_below="@+id/onTime"
+            android:layout_marginTop="10dp"
+            android:text="@string/no_time_set_string" />
+    </RelativeLayout>
+
+    <!-- this is a divider line between sections -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+<!-- ===========================================================================
+     Fourth section contains direct action buttons (ON, OFF, BLINK)
+     ===========================================================================-->
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <TextView android:id="@+id/fullscreen_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_height="22dp"
+        android:keepScreenOn="true"
+        android:textColor="#33b5e5"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:gravity="left"
+        android:text="@string/quickActionTitle" />
+
+    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout android:id="@+id/fullscreen_content_controls" style="?metaButtonBarStyle"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/black_overlay" android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+            <Button android:id="@+id/dummy_button" style="?metaButtonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Lights ON"
+                android:onClick="lightsON"/>
+
+            <Button android:id="@+id/dummy_button" style="?metaButtonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Lights OFF"
+                android:onClick="lightsOFF"/>
+
+            <Button android:id="@+id/dummy_button" style="?metaButtonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="BLINK"
+                android:onClick="lightsBLINK"/>
+
+        </LinearLayout>
+        </FrameLayout>
+    <!--
+    </FrameLayout>
+        -->
+</LinearLayout>
