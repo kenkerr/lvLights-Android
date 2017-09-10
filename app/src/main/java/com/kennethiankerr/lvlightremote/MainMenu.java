@@ -22,6 +22,8 @@ import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+import android.location.LocationManager;
+import android.location.Location;
 
 import net.wimpi.modbus.procimg.SimpleRegister;
 
@@ -112,78 +114,34 @@ public class MainMenu extends Activity {
         cc.getRegisters(registers);
         setUIValues(registers);
 
-/*
-        // Set up an instance of SystemUiHider to control the system UI for
-        mSystemUiHider = SystemUiHider.getInstance(this, contentView, HIDER_FLAGS);
-        mSystemUiHider.setup();
-        mSystemUiHider.setOnVisibilityChangeListener(new SystemUiHider.OnVisibilityChangeListener() {
+        int startingRegisterNumber;
 
-            // Cached values.
-            int mControlsHeight;
-            int mShortAnimTime;
+        // Get location and send it to the controller.
+        LocationManager lm = (LocationManager)getSystemService(this.LOCATION_SERVICE);
+        Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        int longitude = (int) location.getLongitude();
+        int latitude  = (int) location.getLatitude();
 
-            @Override
-            @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
+        SimpleRegister[] regArray = new SimpleRegister[4];
+        regArray[0] = new SimpleRegister();
+        regArray[0].setValue(longitude & 0xffff);
 
-            public void onVisibilityChange(boolean visible) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
-                    // If the ViewPropertyAnimator API is available
-                    // (Honeycomb MR2 and later), use it to animate the
-                    // in-layout UI controls at the bottom of the
-                    // screen.
-                    if (mControlsHeight == 0) {
-                        mControlsHeight = controlsView.getHeight();
-                    }
-                    if (mShortAnimTime == 0) {
-                        mShortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
-                    }
-                    controlsView.animate()
-                            .translationY(visible ? 0 : mControlsHeight)
-                            .setDuration(mShortAnimTime);
-                } else {
-                    // If the ViewPropertyAnimator APIs aren't
-                    // available, simply show or hide the in-layout UI
-                    // controls.
-                    controlsView.setVisibility(visible ? View.VISIBLE : View.GONE);
-                }
+        regArray[1] = new SimpleRegister();
+        regArray[1].setValue(0);
 
-                if (visible && AUTO_HIDE) {
-                    // Schedule a hide().
-                    delayedHide(AUTO_HIDE_DELAY_MILLIS);
-                }
-            }
-        });
+        regArray[2] = new SimpleRegister();
+        regArray[2].setValue(latitude & 0xffff);
 
-        // Set up the user interaction to manually show or hide the system UI.
-        contentView.setOnClickListener (new View.OnClickListener()  {
-            @Override
-            public void onClick(View view) {
-                if (TOGGLE_ON_CLICK) {
-                    mSystemUiHider.toggle();
-                } else {
-                    mSystemUiHider.show();
-                }
-            }
-        });
+        regArray[3] = new SimpleRegister();
+        regArray[3].setValue(0);
 
-        // Upon interacting with UI controls, delay any scheduled hide()
-        // operations to prevent the jarring behavior of controls going away
-        // while interacting with the UI.
-        findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
-*/
+        startingRegisterNumber = 5;
+
+        cc.setControllerRegisters(startingRegisterNumber, regArray);
+
+        Log.i(TAG, "Setting longitude, latitude =" + regArray[0].toString() + ", " + regArray[2].toString());
     }
 
-/*
-    @Override
-    protected void onPostCreate(Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-
-        // Trigger the initial hide() shortly after the activity has been
-        // created, to briefly hint to the user that UI controls
-        // are available.
-        delayedHide(100);
-    }
-*/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);

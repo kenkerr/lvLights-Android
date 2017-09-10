@@ -16,7 +16,7 @@
      ===========================================================================-->
     <TextView android:id="@+id/onOffStatus"
         android:layout_width="match_parent"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:layout_height="80dp"
         android:keepScreenOn="true"
         android:textColor="#33b5e5"
@@ -36,7 +36,7 @@
      ===========================================================================-->
     <TextView android:id="@+id/fullscreen_content"
         android:layout_width="match_parent"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:layout_height="22dp"
         android:keepScreenOn="true"
@@ -87,8 +87,8 @@
      ===========================================================================-->
     <TextView android:id="@+id/fullscreen_content"
         android:layout_width="match_parent"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
         android:layout_height="22dp"
         android:keepScreenOn="true"
         android:textColor="#33b5e5"
@@ -100,7 +100,7 @@
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/RelativeLayout2"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:orientation="vertical" >
 
         <TextView
@@ -154,7 +154,7 @@
          android:fitsSystemWindows. -->
     <TextView android:id="@+id/fullscreen_content"
         android:layout_width="match_parent"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:layout_height="22dp"
         android:keepScreenOn="true"
@@ -170,7 +170,7 @@
         <LinearLayout android:id="@+id/fullscreen_content_controls" style="?metaButtonBarStyle"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:layout_gravity="bottom|center_horizontal"
-            android:background="@color/black_overlay" android:orientation="horizontal"
+            android:orientation="horizontal"
             tools:ignore="UselessParent">
 
             <Button android:id="@+id/dummy_button" style="?metaButtonBarButtonStyle"
